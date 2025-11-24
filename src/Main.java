@@ -163,7 +163,7 @@ class CarRentalSystem {
                 System.out.print("\nEnter the car ID you want to rent: "); // FIX: missing ;
                 String carId = scanner.nextLine();
 
-                System.out.print("Enter the number of days for rentals: "); // FIX: missing ;
+                System.out.print("Enter the number of days for the specific rentals: "); // FIX: missing ;
                 int rentalDays = scanner.nextInt();
                 scanner.nextLine();
 
