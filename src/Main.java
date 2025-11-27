@@ -13,12 +13,12 @@ class Car {
         this.carId = carId;
         this.brand = brand;
         this.model = model;
-        this.basePricePerDay = basePricePerDay; // FIX: corrected variable name
+        this.basePricePerDay = basePricePerDay;
         this.isAvailable = true;
     }
 
     public String getCarId() {
-        return carId; // FIX: cardId → carId
+        return carId;
     }
 
     public String getBrand() {
@@ -42,7 +42,7 @@ class Car {
     }
 
     public void returnCar() {
-        isAvailable = true; // FIX: missing semicolon
+        isAvailable = true;
     }
 }
 
@@ -51,7 +51,7 @@ class Customer {
     private String name;
 
     public Customer(String customerId, String name) {
-        this.customerId = customerId; // FIX: CustomerId → customerId
+        this.customerId = customerId;
         this.name = name;
     }
 
@@ -80,7 +80,7 @@ class Rental {
     }
 
     public Customer getCustomer() {
-        return customer; // FIX: Customer → customer
+        return customer;
     }
 
     public int getDays() {
@@ -93,7 +93,7 @@ class CarRentalSystem {
     private List<Customer> customers;
     private List<Rental> rentals;
 
-    public CarRentalSystem() { // FIX: CarRentalSystems → CarRentalSystem
+    public CarRentalSystem() {
         cars = new ArrayList<>();
         customers = new ArrayList<>();
         rentals = new ArrayList<>();
@@ -128,7 +128,7 @@ class CarRentalSystem {
         }
 
         if (rentalToRemove != null) {
-            rentals.remove(rentalToRemove); // FIX: rentalsToRemove → rentalToRemove
+            rentals.remove(rentalToRemove);
             System.out.println("Car was returned successfully.");
         } else {
             System.out.println("Car was not rented.");
@@ -156,14 +156,14 @@ class CarRentalSystem {
                 System.out.println("\nAvailable Cars: ");
                 for (Car car : cars) {
                     if (car.isAvailable()) {
-                        System.out.println(car.getCarId() + " - " + car.getBrand() + " " + car.getModel()); // FIX: getmodel → getModel
+                        System.out.println(car.getCarId() + " - " + car.getBrand() + " " + car.getModel());
                     }
                 }
 
-                System.out.print("\nEnter the car ID you want to rent: "); // FIX: missing ;
+                System.out.print("\nEnter the car ID you want to rent: ");
                 String carId = scanner.nextLine();
 
-                System.out.print("Enter the number of days for the specific rentals: "); // FIX: missing ;
+                System.out.print("Enter the number of days for the specific rentals: ");
                 int rentalDays = scanner.nextInt();
                 scanner.nextLine();
 
@@ -179,9 +179,14 @@ class CarRentalSystem {
                 }
 
                 if (selectedCar != null) {
-                    double totalPrice = selectedCar.calculatePrice(rentalDays); // FIX: RentalDays → rentalDays
+                    double totalPrice = selectedCar.calculatePrice(rentalDays);
                     System.out.println("\n== Rental Information ==\n");
                     System.out.println("Customer ID: " + newCustomer.getCustomerId());
+                    System.out.println("Car Rented: " + selectedCar.getBrand() + " " + selectedCar.getModel());
+                    System.out.println("Total Price: $" + totalPrice);
+
+                    // ⭐ ADDED LINE:
+                    System.out.println("Rental successful. Enjoy your ride!");
                 }
             }
         }
