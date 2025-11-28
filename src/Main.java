@@ -143,7 +143,7 @@ class CarRentalSystem {
             System.out.println("1. Rent a Car");
             System.out.println("2. Return a Car");
             System.out.println("3. Exit");
-            System.out.print("Enter your choice:");
+            System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -163,7 +163,7 @@ class CarRentalSystem {
                 System.out.print("\nEnter the car ID you want to rent: ");
                 String carId = scanner.nextLine();
 
-                System.out.print("Enter the number of days for the specific rentals: ");
+                System.out.print("Enter the number of days for the rental: ");
                 int rentalDays = scanner.nextInt();
                 scanner.nextLine();
 
@@ -185,10 +185,38 @@ class CarRentalSystem {
                     System.out.println("Car Rented: " + selectedCar.getBrand() + " " + selectedCar.getModel());
                     System.out.println("Total Price: $" + totalPrice);
 
-                    // ⭐ ADDED LINE:
                     System.out.println("Rental successful. Enjoy your ride!");
+
+                    // ⭐ Three Added Smart Lines:
+                    rentCar(selectedCar, newCustomer, rentalDays);      // Actually record the rental
+                    System.out.println("Car status updated: Now rented."); // Confirm status change
+                    break;                                                // Exit back to menu
                 }
             }
+            else if (choice == 2) {
+                System.out.print("\nEnter car ID to return: ");
+                String returnId = scanner.nextLine();
+
+                Car carToReturn = null;
+                for (Car car : cars) {
+                    if (car.getCarId().equals(returnId) && !car.isAvailable()) {
+                        carToReturn = car;
+                        break;
+                    }
+                }
+
+                if (carToReturn != null) {
+                    returnCar(carToReturn);
+                } else {
+                    System.out.println("Car is either not found or not rented.");
+                }
+            }
+            else if (choice == 3) {
+                System.out.println("Exiting system...");
+                break;
+            }
         }
+
+        scanner.close();
     }
 }
