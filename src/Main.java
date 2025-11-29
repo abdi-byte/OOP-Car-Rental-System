@@ -141,8 +141,8 @@ class CarRentalSystem {
         while (true) {
             System.out.println("==== Car Rental System ===");
             System.out.println("1. Rent a Car");
-            System.out.println("2. Return a Car");
-            System.out.println("3. Exit");
+            System.out.println("2. Return a Car you have previously rented");
+            System.out.println("3. Exit. Enjoy the rest of your day!!");
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
@@ -189,7 +189,7 @@ class CarRentalSystem {
 
                     // ⭐ Three Added Smart Lines:
                     rentCar(selectedCar, newCustomer, rentalDays);      // Actually record the rental
-                    System.out.println("Car status updated: Now rented."); // Confirm status change
+                    System.out.println("Car status updated: Now srented."); // Confirm status change
                     break;                                                // Exit back to menu
                 }
             }
