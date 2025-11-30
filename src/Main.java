@@ -184,15 +184,11 @@ class CarRentalSystem {
                     System.out.println("Customer ID: " + newCustomer.getCustomerId());
                     System.out.println("Car Rented: " + selectedCar.getBrand() + " " + selectedCar.getModel());
                     System.out.println("Total Price: $" + totalPrice);
-
                     System.out.println("Rental successful. Enjoy your ride!");
-
-                    // ⭐ Three Added Smart Lines:
-                    rentCar(selectedCar, newCustomer, rentalDays);      // Actually record the rental
-                    System.out.println("Car status updated: Now srented."); // Confirm status change
-                    break;                                                // Exit back to menu
+                    rentCar(selectedCar, newCustomer, rentalDays);
                 }
             }
+
             else if (choice == 2) {
                 System.out.print("\nEnter car ID to return: ");
                 String returnId = scanner.nextLine();
@@ -211,21 +207,23 @@ class CarRentalSystem {
                     System.out.println("Car is either not found or not rented.");
                 }
             }
+
             else if (choice == 3) {
                 System.out.println("Exiting system...");
                 break;
             }
         }
-        public class Main {
-            public static void main(String[] args) {
-                CarRentalSystem system = new CarRentalSystem();
 
-                system.addCar(new Car("CAR1", "Toyota", "Corolla", 50));
-                system.addCar(new Car("CAR2", "Honda", "Civic", 60));
-                system.addCar(new Car("CAR3", "BMW", "X5", 120));
-
-                system.menu();
-            }
         scanner.close();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        CarRentalSystem system = new CarRentalSystem();
+        system.addCar(new Car("CAR1", "Toyota", "Corolla", 50));
+        system.addCar(new Car("CAR2", "Honda", "Civic", 60));
+        system.addCar(new Car("CAR3", "BMW", "X5", 120));
+        system.menu();
     }
 }
