@@ -216,7 +216,16 @@ class CarRentalSystem {
                 break;
             }
         }
+        public class Main {
+            public static void main(String[] args) {
+                CarRentalSystem system = new CarRentalSystem();
 
+                system.addCar(new Car("CAR1", "Toyota", "Corolla", 50));
+                system.addCar(new Car("CAR2", "Honda", "Civic", 60));
+                system.addCar(new Car("CAR3", "BMW", "X5", 120));
+
+                system.menu();
+            }
         scanner.close();
     }
 }
