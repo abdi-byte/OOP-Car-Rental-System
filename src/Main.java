@@ -224,6 +224,9 @@ public class Main {
         system.addCar(new Car("CAR1", "Toyota", "Corolla", 50));
         system.addCar(new Car("CAR2", "Honda", "Civic", 60));
         system.addCar(new Car("CAR3", "BMW", "X5", 120));
+        system.addCar(new Car("CAR4", "Audi", "A4", 90));
+        system.addCar(new Car("CAR5", "Mercedes", "C200", 110));
+        system.addCar(new Car("CAR6", "Ford", "Mustang", 150));
         system.menu();
     }
 }
