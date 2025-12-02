@@ -189,7 +189,8 @@ class CarRentalSystem {
                 }
             }
 
-            else if (choice == 2) {
+
+                else if (choice == 2) {
                 System.out.print("\nEnter car ID to return: ");
                 String returnId = scanner.nextLine();
 
@@ -226,7 +227,7 @@ public class Main {
         system.addCar(new Car("CAR3", "BMW", "X5", 120));
         system.addCar(new Car("CAR4", "Audi", "A4", 90));
         system.addCar(new Car("CAR5", "Mercedes", "C200", 110));
-        system.addCar(new Car("CAR6", "Ford", "Mustang", 150));
+        system.addCar(new Car("CAR6", "Ford", "Fiesta", 150));
         system.menu();
     }
 }
