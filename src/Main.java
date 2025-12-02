@@ -178,6 +178,11 @@ class CarRentalSystem {
                     }
                 }
 
+                if (selectedCar == null) {
+                    System.out.println("Invalid car ID or car is not available.");
+                    continue;
+                }
+
                 if (selectedCar != null) {
                     double totalPrice = selectedCar.calculatePrice(rentalDays);
                     System.out.println("\n== Rental Information ==\n");
